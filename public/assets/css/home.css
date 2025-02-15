@@ -1,0 +1,131 @@
+/* -----------------------------------|Geral|----------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body,
+main,
+.principal,
+footer,
+.menu_container,
+.menu_items,
+ul,
+li,
+a {
+  display: flex;
+  align-items: center;
+}
+
+body,
+main,
+footer,
+.principal,
+a {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.principal,
+footer,
+.menu_items button {
+  border: 0.1em solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+footer,
+h1,
+a,
+.menu_items button {
+  color: aliceblue;
+  font-weight: 500;
+}
+
+/* ------------------------------------------------------------------------------ */
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+
+main {
+  height: 98vh;
+  width: 98vw;
+  background-image: linear-gradient(45deg, rgb(22, 139, 248), rgb(53, 53, 53));
+  border-radius: 10px;
+}
+
+.principal {
+  height: 80%;
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0.01rem solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 1%;
+  height: 20%;
+  width: 98%;
+}
+
+/* -------------------------------------|Menu|------------------------------------- */
+.menu_container {
+  height: 10%;
+  width: 98%;
+  color: aliceblue;
+  font-weight: 500;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.menu_items {
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+ul {
+  height: 90%;
+  width: 90%;
+  justify-content: space-evenly;
+}
+
+li {
+  height: 70%;
+  width: 10%;
+  list-style-type: none;
+  justify-content: space-evenly;
+}
+
+li:hover {
+  border: 0.1rem solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+.menu_items button {
+  font-size: large;
+  height: 50px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu_items button:hover {
+  transform: scale(1.05);
+  color: black;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.9);
+}

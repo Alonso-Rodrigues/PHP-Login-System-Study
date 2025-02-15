@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+  <?php
+  session_start();
+  require_once __DIR__ . '/connect/config.php';
+  ?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="./assets/css/geral.css">
-</head>
+  <!DOCTYPE html>
+  <html lang="en">
 
-<body>
-  <main>
-    <section>
-      <div class="login">
-        <h1>Login Sytem Study</h1>
-        <input type="email" placeholder="email">
-        <input type="password" placeholder="password">
-        <button>Send</button>
-      </div>
-    </section>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+  </head>
 
-</html>
+  <body>
+    <main>
+      <section>
+        <div class="login">
+          <h1>Login Sytem Study</h1>
+          <input type="email" placeholder="email">
+          <input type="password" placeholder="password">
+          <button>Send</button>
+        </div>
+      </section>
+    </main>
+  </body>
+
+  </html>
