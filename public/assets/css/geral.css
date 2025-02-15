@@ -18,13 +18,12 @@ section,
 
 section,
 .login,
-button{
+button {
   border: 0.1rem solid rgba(255, 255, 255, 0.9);
   border-radius: 10px;
 }
 
 h1,
-input,
 button {
   color: aliceblue;
   font-weight: 500;
@@ -72,4 +71,15 @@ button {
   width: 30%;
   background-color: rgba(0, 0, 0, 0.5);
   border-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-sizing: border-box;
+  color: black;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.2);
 }
