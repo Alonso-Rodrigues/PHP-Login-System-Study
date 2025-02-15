@@ -1,0 +1,75 @@
+/* -----------------------------------|Ajustes Geral----------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body,
+main,
+section,
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section,
+.login,
+button{
+  border: 0.1rem solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+h1,
+input,
+button {
+  color: aliceblue;
+  font-weight: 500;
+}
+
+/* -----------------------------------|Ajustes Geral----------------------------------- */
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+
+main {
+  height: 98vh;
+  width: 98vw;
+  background-image: linear-gradient(45deg, cyan, yellow);
+  border-radius: 10px;
+}
+
+section {
+  height: 80%;
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.login {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 86%;
+  width: 85%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+input {
+  height: 5%;
+  width: 80%;
+  margin: -10%;
+  border-radius: 2px;
+}
+
+button {
+  font-size: large;
+  height: 8%;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
+}
