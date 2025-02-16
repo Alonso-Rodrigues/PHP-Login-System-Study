@@ -29,7 +29,6 @@ a {
 }
 
 .principal,
-footer,
 .menu_items button {
   border: 0.1em solid rgba(255, 255, 255, 0.9);
   border-radius: 10px;
@@ -58,18 +57,19 @@ main {
 }
 
 .principal {
-  height: 80%;
-  width: 40%;
+  height: 95%;
+  width: 98%;
   background-color: rgba(255, 255, 255, 0.2);
   border: 0.01rem solid rgba(255, 255, 255, 0.9);
   border-radius: 10px;
 }
 
 footer {
-  background-color: rgba(255, 255, 255, 0.1);
-  margin: 1%;
   height: 20%;
   width: 98%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0.5%;
 }
 
 /* -------------------------------------|Menu|------------------------------------- */
