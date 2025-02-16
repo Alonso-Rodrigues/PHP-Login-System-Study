@@ -1,9 +1,30 @@
 <?php 
+session_start();
+require_once __DIR__ . '/../connect/config.php';
 
-if(isset($_POST['submit'])){
-  print_r(($_POST['name']));
-  print_r(($_POST['email']));
-  print_r(($_POST['password']));
+if (isset($_POST['submit'])) {
+  $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+  $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+  $password = $_POST['password'];
+
+  if ($name && $email && $password) {
+   
+    $pwd_hash = password_hash($password, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO users (name, email, pwd_hash) VALUES (:name, :email, :pwd_hash)";
+    $stmt = $connect->prepare($sql);
+    $stmt->execute([
+      ':name' => $name,
+      ':email' => $email,
+      ':pwd_hash' => $pwd_hash
+    ]);
+
+  
+    header('Location: login.php');
+    exit();
+  } else {
+    echo "Error";
+  }
 }
 
 ?>

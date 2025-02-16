@@ -35,13 +35,13 @@ input,
 body {
   height: 100vh;
   width: 100vw;
-  /* background-color: black; */
+  background-color: black;
 }
 
 main {
   height: 98vh;
   width: 98vw;
-  /* background-image: linear-gradient(45deg, rgb(22, 139, 248), rgb(53, 53, 53)); */
+  background-image: linear-gradient(45deg, rgb(22, 139, 248), rgb(53, 53, 53));
   border-radius: 10px;
 }
 
