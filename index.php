@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/home.css">
+  <link rel="stylesheet" href="./public/assets/css/index.css">
   <title>Home</title>
 </head>
 
@@ -12,16 +12,16 @@
   <section class="menu_container">
     <nav class="menu_items">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Articles</a></li>
-        <li><a href="#">Register</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="/public/pages/articles.php">Articles</a></li>
+        <li><a href="/public/pages/register.php">Register</a></li>
       </ul>
-      <button>Login</button>
+      <button><a href="/public/pages/login.php">Login</a></button>
     </nav>
   </section>
   <main>
     <section class="principal">
-      <h1>Welcome</h1>
+      <h1>Welcome</h1>  
     </section>
   </main>
   <footer>
