@@ -16,7 +16,6 @@ section,
   align-items: center;
 }
 
-section,
 .login,
 button {
   border: 0.1rem solid rgba(255, 255, 255, 0.9);
@@ -47,7 +46,6 @@ main {
 section {
   height: 80%;
   width: 40%;
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .login {
@@ -62,7 +60,7 @@ input {
   height: 5%;
   width: 80%;
   margin: -10%;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 button {
