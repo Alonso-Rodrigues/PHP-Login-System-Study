@@ -12,7 +12,7 @@
   <section class="menu_container">
     <nav class="menu_items">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="./index.html">Home</a></li>
         <li><a href="/public/pages/articles.php">Articles</a></li>
         <li><a href="/public/pages/register.php">Register</a></li>
       </ul>
