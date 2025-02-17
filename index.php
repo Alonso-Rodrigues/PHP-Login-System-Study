@@ -22,13 +22,7 @@
   </header>
   <main>
     <section class="principal">
-      <h1>Welcome</h1>
-    </section>
-    <section>
-      <h1>Welcome</h1>
-    </section>
-    <section>
-      <h1>Welcome</h1>
+      <h1>Login System</h1>
     </section>
   </main>
   <footer>

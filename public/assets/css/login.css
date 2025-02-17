@@ -18,7 +18,7 @@ section,
 
 .login,
 button {
-  border: 0.1rem solid rgba(255, 255, 255, 0.9);
+  border: 0.1mm solid rgba(255, 255, 255, 0.9);
   border-radius: 10px;
 }
 

@@ -9,14 +9,14 @@ if (isset($_POST['submit'])) {
 
   if ($name && $email && $password) {
    
-    $pwd_hash = password_hash($password, PASSWORD_DEFAULT);
+    $password = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (name, email, pwd_hash) VALUES (:name, :email, :pwd_hash)";
+    $sql = "INSERT INTO users (name, email, password) VALUES (:name, :email, :password)";
     $stmt = $connect->prepare($sql);
     $stmt->execute([
       ':name' => $name,
       ':email' => $email,
-      ':pwd_hash' => $pwd_hash
+      ':password' => $password
     ]);
 
   
