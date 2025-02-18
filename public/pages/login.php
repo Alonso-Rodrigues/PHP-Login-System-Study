@@ -11,7 +11,7 @@
 <body>
   <main>
     <section>
-      <form action="test.php" method="POST" class="login">
+      <form action="testLogin.php" method="POST" class="login">
         <h1>Login</h1>
         <input type="email" name="email" placeholder="email">
         <input type="password" name="password" placeholder="password">

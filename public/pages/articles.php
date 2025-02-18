@@ -1,6 +1,5 @@
-<!-- <?php
+<?php
 session_start();
-// print_r($_SESSION);
 if (!isset($_SESSION['email']) || !isset($_SESSION['password'])) {
     session_destroy(); 
     header('Location: login.php'); 
@@ -8,7 +7,7 @@ if (!isset($_SESSION['email']) || !isset($_SESSION['password'])) {
 }
 
 $login = $_SESSION['email'];
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
