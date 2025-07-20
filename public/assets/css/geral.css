@@ -94,6 +94,30 @@ a {
   font-weight: 500;
 }
 
+.menu_items .logout-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  height: 50%;
+  width: 6%;
+  background-color: rgba(255, 0, 0, 0.7);
+  border: 0.1mm solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+  transform: scale(1.05);
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
 /* -------------------------------------|Footer|------------------------------------- */
 footer {
   display: flex;
