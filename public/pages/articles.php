@@ -29,7 +29,7 @@ $login = $_SESSION['email'];
         <li><a href="/public/pages/register.php">Register</a></li>
       </ul>
       <button class="logout-button">
-        <a href="/public/pages/login.php">
+        <a href="/public/pages/logout.php">
           Log out
         </a>
       </button>
