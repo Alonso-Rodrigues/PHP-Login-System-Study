@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./public/assets/css/index.css">
-  <link rel="stylesheet" href="./public/assets/css/geral.css">
+  <link rel="stylesheet" href="/assets/css/home.css">
+  <link rel="stylesheet" href="/assets/css/geral.css">
   <title>Home</title>
 </head>
 
@@ -14,11 +14,11 @@
     <nav class="menu_items">
       <ul>
         <li><a href="./">Home</a></li>
-        <li><a href="/public/pages/articles.php">Articles</a></li>
-        <li><a href="/public/pages/register.php">Register</a></li>
+        <li><a href="/pages/articles.php">Articles</a></li>
+        <li><a href="/pages/register.php">Register</a></li>
       </ul>
       <button>
-        <a href="/public/pages/login.php">
+        <a href="/pages/login.php">
           Login
         </a>
       </button>
