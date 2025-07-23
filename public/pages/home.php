@@ -14,11 +14,11 @@
     <nav class="menu_items">
       <ul>
         <li><a href="./">Home</a></li>
-        <li><a href="/pages/articles.php">Articles</a></li>
-        <li><a href="/pages/register.php">Register</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li><a href="/register">Register</a></li>
       </ul>
       <button>
-        <a href="/pages/login.php">
+        <a href="/login">
           Login
         </a>
       </button>
