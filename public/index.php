@@ -2,6 +2,7 @@
 
 $url = strtoupper($_GET['url'] ?? 'HOME');
 
+
 switch ($url) {
   case "ARTICLES":
     require_once "pages/articles.php";
@@ -15,3 +16,4 @@ switch ($url) {
   default:
     require_once "pages/home.php";
 }
+?>

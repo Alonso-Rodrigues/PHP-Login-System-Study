@@ -5,10 +5,9 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
-if (!isset($_SESSION['email']) || !isset($_SESSION['password'])) {
-    session_destroy(); 
-    header('Location: /login'); 
-    exit; 
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header('Location: /login');
+    exit;
 }
 
 $login = $_SESSION['email'];
@@ -29,12 +28,12 @@ $login = $_SESSION['email'];
   <header class="menu_container">
     <nav class="menu_items">
       <ul>
-        <li><a href="../../home.php">Home</a></li>
-        <li><a href="/public/pages/articles.php">Articles</a></li>
-        <li><a href="/public/pages/register.php">Register</a></li>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li><a href="/register">Register</a></li>
       </ul>
       <button class="logout-button">
-        <a href="/public/pages/logout.php">
+        <a href="/login">
           Log out
         </a>
       </button>
