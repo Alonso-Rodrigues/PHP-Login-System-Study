@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '../../connect/config.php';
+require_once __DIR__ . '/../connect/config.php';
 
 if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['password'])) {
     $email = $_POST['email'];
@@ -17,12 +17,12 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['passwor
             session_regenerate_id(true); 
             $_SESSION['email'] = $email;
             $_SESSION['password'] = $password;
-            header('Location: articles.php');
+            header('Location: /articles');
             exit;
 
         } else {
             session_destroy();
-            header('Location: login.php');
+            header('Location: /login');
             exit;
         }
 
@@ -30,9 +30,10 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['passwor
         echo "Erro: " . $e->getMessage();
     }
 } else {
-    header('Location: login.php');
+    header('Location: /login');
     exit;
 }
 
-
 ?>
+
+
