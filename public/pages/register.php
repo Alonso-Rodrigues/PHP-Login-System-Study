@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once __DIR__ . '/../connect/config.php';
+require_once __DIR__ . '/../../app/connect/config.php';
 
 if (isset($_POST['submit'])) {
   $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     ]);
 
   
-    header('Location: login.php');
+    header('Location: /login');
     exit();
   } else {
     echo "Error";
