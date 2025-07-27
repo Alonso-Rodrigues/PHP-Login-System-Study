@@ -25,20 +25,7 @@ $login = $_SESSION['email'];
 </head>
 
 <body>
-  <header class="menu_container">
-    <nav class="menu_items">
-      <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/articles">Articles</a></li>
-        <li><a href="/register">Register</a></li>
-      </ul>
-      <button class="logout-button">
-        <a href="/login">
-          Log out
-        </a>
-      </button>
-    </nav>
-  </header>
+  <?php include_once __DIR__ . '/../../app/includes/menu.php'; ?>
   <main>
     <section class="principal">
       <h1>Welcome,
