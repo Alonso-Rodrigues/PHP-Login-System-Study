@@ -1,3 +1,8 @@
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,16 +22,32 @@
         <li><a href="/articles">Articles</a></li>
         <li><a href="/register">Register</a></li>
       </ul>
-      <button>
-        <a href="/login">
-          Login
-        </a>
-      </button>
+      
+      <?php if ($isLoggedIn): ?>
+        <button class="logout-button">
+          <a href="/logout">
+            Log out
+          </a>
+        </button>
+      <?php else: ?>
+        <button>
+          <a href="/login">
+            Login
+          </a>
+        </button>
+      <?php endif; ?>
     </nav>
   </header>
+
   <main>
     <section class="principal">
-      <h1>Login System</h1>
+      <h1>
+        Login System
+      </h1>
+        <?php if ($isLoggedIn): ?>
+          <p>Welcome back, 
+          <?php echo htmlspecialchars($_SESSION['email']); ?>!</p>
+        <?php endif; ?>
     </section>
   </main>
   <footer>

@@ -11,7 +11,7 @@
 <body>
   <main>
     <section>
-      <form action="/articles" method="POST" class="login">
+      <form action="/loginprocess" method="POST" class="login">
         <h1>Login</h1>
         <input type="email" name="email" placeholder="email">
         <input type="password" name="password" placeholder="password">

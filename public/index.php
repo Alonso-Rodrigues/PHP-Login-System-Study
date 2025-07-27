@@ -2,6 +2,17 @@
 
 $url = strtoupper($_GET['url'] ?? 'HOME');
 
+// Process login
+if ($url === 'LOGINPROCESS' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    require_once __DIR__ . '/../app/actions/loginProcess.php';
+    exit;
+}
+
+// Process logout
+if ($url === 'LOGOUT') {
+    require_once __DIR__ . '/../app/actions/logout.php';
+    exit;
+}
 
 switch ($url) {
   case "ARTICLES":
