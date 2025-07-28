@@ -1,0 +1,95 @@
+.menu-container {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: 98vw;
+  color: aliceblue;
+  font-weight: 500;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.menu-items ul {
+  display: flex;
+  align-items: center;
+  height: 90%;
+  width: 90%;
+  justify-content: space-evenly;
+}
+
+.menu-items li {
+  display: flex;
+  align-items: center;
+  height: 50%;
+  width: 10%;
+  list-style-type: none;
+  justify-content: space-evenly;
+}
+
+.menu-items li:hover {
+  border: 0.1mm solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+.menu-items button {
+  font-size: large;
+  height: 50%;
+  width: 6%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  border: 0.1mm solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-items button:hover {
+  transform: scale(1.05);
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.menu-items button:hover a {
+  color: black;
+}
+
+.menu-items a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: 500;
+}
+
+.menu-items .logout-button {
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+}
+
+.menu-items .logout-button:hover {
+  transform: scale(1.05);
+  font-weight: 600;
+  background-color: rgba(255, 0, 0, 0.9);
+}
+
+.menu-items .login-button {
+  background-color: rgba(0, 123, 255, 0.7);
+  color: white;
+}
+
+.menu-items .login-button:hover {
+  background-color: rgba(0, 123, 255, 0.9);
+}
