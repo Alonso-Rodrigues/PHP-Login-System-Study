@@ -20,8 +20,9 @@ $login = $_SESSION['email'];
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Articles</title>
-  <link rel="stylesheet" href="../assets/css/geral.css">
-  <link rel="stylesheet" href="../assets/css/articles.css">
+  <link rel="stylesheet" href="/assets/css/geral.css">
+  <link rel="stylesheet" href="/assets/css/articles.css">
+  <link rel="stylesheet" href="/assets/css/menu.css"> 
 </head>
 
 <body>

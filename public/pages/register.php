@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 <body>
   <main>
     <section>
-      <form action="register.php" method="POST">
+      <form action="/register" method="POST">
         <h1>Register Form</h1>
       <label for="name">Name</label>
       <input type="text" placeholder="Name" name="name" id="name" required>
@@ -57,6 +57,8 @@ if (isset($_POST['submit'])) {
         <button type="submit" name="submit">Send</button>
         <button type="button">Cancel</button>
       </div>
+      </form>
+    </section>
   </main>
 </body>
 
