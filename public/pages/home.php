@@ -1,6 +1,15 @@
 <?php
 session_start();
 $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+
+
+$users = [];
+$totalUsers = 0;
+if ($isLoggedIn) {
+    require_once __DIR__ . '/../../app/actions/getUsersData.php';
+    $users = getAllUsers();
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +25,7 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 </head>
 
 <body>
-<?php include_once __DIR__ . '/../../app/includes/menu.php'; ?>
+<?php include_once __DIR__ . '/../app/includes/menu.php'; ?>
   <main>
     <section class="container-welcome">
       <section class="welcome-user">
@@ -27,13 +36,44 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
           <p>Welcome back, 
             <?php 
               if (isset($_SESSION['user_name'])) {
-                  echo htmlspecialchars($_SESSION['user_name']);
+                  echo ucfirst(htmlspecialchars($_SESSION['user_name']));
               } else {
                   echo 'User'; 
               }
             ?>
           </p>
         <?php endif; ?>
+      </section>
+      <section class="list-users">
+        <table class="table-users">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Password</th>
+            </tr>
+          </thead>
+                <tbody>
+                <?php if (!empty($users)): ?>
+                    <?php $contador = 1; ?>
+                    <?php foreach ($users as $user): ?>
+                        <tr>
+                            <td><?php echo $contador++; ?></td>
+                            <td><?php echo htmlspecialchars($user['id']); ?></td>
+                            <td><?php echo htmlspecialchars($user['name']); ?></td>
+                            <td><?php echo htmlspecialchars($user['email']); ?></td>
+                            <td>••••••••</td> <!-- Senha mascarada por segurança -->
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="5" style="text-align: center;">Nenhum usuário encontrado</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>              
       </section>
     </section>
   </main>

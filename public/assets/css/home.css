@@ -16,7 +16,7 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   height: 95vh;
   width: 96vw;
   background-color: rgba(255, 255, 255, 0.2);
@@ -34,4 +34,20 @@ main {
   width: 30%;
   color: aliceblue;
   font-weight: 500;
+}
+
+.list-users {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 70%;
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 0.01rem solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+.table-users{
+  
 }
