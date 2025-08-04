@@ -25,7 +25,7 @@ if ($isLoggedIn) {
 </head>
 
 <body>
-<?php include_once __DIR__ . '/../app/includes/menu.php'; ?>
+<?php include_once __DIR__ . '/../../app/includes/menu.php'; ?>
   <main>
     <section class="container-welcome">
       <section class="welcome-user">
