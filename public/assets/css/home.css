@@ -16,7 +16,7 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   height: 95vh;
   width: 96vw;
   background-color: rgba(255, 255, 255, 0.2);
@@ -34,4 +34,87 @@ main {
   width: 30%;
   color: aliceblue;
   font-weight: 500;
+}
+
+.list-users {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 95%;
+  max-width: 1200px;
+  min-height: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.list-users h2 {
+  color: aliceblue;
+  font-weight: 500;
+}
+
+.table-users {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin: 1%;
+}
+
+.table-users thead {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.table-users th,
+.table-users td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.table-users th {
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.table-users tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.table-users tr:last-child td {
+  border-bottom: none;
+}
+
+.table-users th:nth-child(1),
+.table-users td:nth-child(1) {
+  width: 8%;
+  text-align: center;
+}
+
+.table-users th:nth-child(2),
+.table-users td:nth-child(2) {
+  width: 12%;
+  text-align: center;
+}
+
+.table-users th:nth-child(3),
+.table-users td:nth-child(3) {
+  width: 25%;
+}
+
+.table-users th:nth-child(4),
+.table-users td:nth-child(4) {
+  width: 35%;
+}
+
+.table-users th:nth-child(5),
+.table-users td:nth-child(5) {
+  width: 20%;
+  text-align: center;
 }
