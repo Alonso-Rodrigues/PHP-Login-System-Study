@@ -45,6 +45,7 @@ if ($isLoggedIn) {
         <?php endif; ?>
       </section>
       <section class="list-users">
+        <h2>User list</h2>
         <table class="table-users">
           <thead>
             <tr>
@@ -55,23 +56,23 @@ if ($isLoggedIn) {
               <th>Password</th>
             </tr>
           </thead>
-                <tbody>
-                <?php if (!empty($users)): ?>
-                    <?php $contador = 1; ?>
-                    <?php foreach ($users as $user): ?>
-                        <tr>
-                            <td><?php echo $contador++; ?></td>
-                            <td><?php echo htmlspecialchars($user['id']); ?></td>
-                            <td><?php echo htmlspecialchars($user['name']); ?></td>
-                            <td><?php echo htmlspecialchars($user['email']); ?></td>
-                            <td>••••••••</td> <!-- Senha mascarada por segurança -->
-                        </tr>
-                    <?php endforeach; ?>
+          <tbody>
+              <?php if (!empty($users)): ?>
+                <?php $contador = 1; ?>
+                <?php foreach ($users as $user): ?>
+                  <tr>
+                    <td><?php echo $contador++; ?></td>
+                    <td><?php echo htmlspecialchars($user['id']); ?></td>
+                    <td><?php echo htmlspecialchars($user['name']); ?></td>
+                    <td><?php echo htmlspecialchars($user['email']); ?></td>
+                    <td>••••••••</td>
+                  </tr>
+                <?php endforeach; ?>
                 <?php else: ?>
-                    <tr>
-                        <td colspan="5" style="text-align: center;">Nenhum usuário encontrado</td>
-                    </tr>
-                <?php endif; ?>
+                  <tr>
+                      <td colspan="5" style="text-align: center;">Nenhum usuário encontrado</td>
+                  </tr>
+              <?php endif; ?>
             </tbody>
         </table>              
       </section>
