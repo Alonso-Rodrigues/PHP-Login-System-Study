@@ -24,7 +24,19 @@ switch ($url) {
   case "LOGIN":
     require_once "pages/login.php";
     break;
+  case "HOME":
+    require_once "pages/home.php";
+    break;
+  case "EDITUSER":
+    require_once __DIR__ . '/../app/actions/editUser.php';
+    break;
+  case "DELETEUSER":
+    require_once __DIR__ . '/../app/actions/deleteUser.php';
+    break;
   default:
     require_once "pages/home.php";
 }
 ?>
+
+
+

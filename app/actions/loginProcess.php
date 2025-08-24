@@ -20,7 +20,7 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['passwor
             $_SESSION['email'] = $user['email'];
             $_SESSION['logged_in'] = true;
 
-            header('Location: /articles');
+            header('Location: /home');
             exit;
 
         } else {
