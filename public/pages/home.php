@@ -2,13 +2,11 @@
 session_start();
 $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 
-
 $users = [];
 $totalUsers = 0;
 if ($isLoggedIn) {
     require_once __DIR__ . '/../../app/actions/getUsersData.php';
     $users = getAllUsers();
-
 }
 ?>
 
@@ -57,6 +55,7 @@ if ($isLoggedIn) {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Password</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -69,11 +68,20 @@ if ($isLoggedIn) {
                       <td><?php echo htmlspecialchars($user['name']); ?></td>
                       <td><?php echo htmlspecialchars($user['email']); ?></td>
                       <td>••••••••</td>
+                      <td class="action-buttons">
+                        <a href="/app/actions/editUser.php?id=<?php echo $user['id']; ?>" class="btn btn-edit">
+                          ✏️ Edit
+                        </a>
+                        <a href="/app/actions/deleteUser.php?id=<?php echo $user['id']; ?>" class="btn btn-delete"
+                           onclick="return confirm('Are you sure you want to delete <?php echo htmlspecialchars($user['name']); ?>?')">
+                          🗑️ Delete
+                        </a>
+                      </td>
                     </tr>
                   <?php endforeach; ?>
                   <?php else: ?>
                     <tr>
-                        <td colspan="5" style="text-align: center;">No users found</td>
+                        <td colspan="6" style="text-align: center;">No users found</td>
                     </tr>
                 <?php endif; ?>
               </tbody>
@@ -82,6 +90,7 @@ if ($isLoggedIn) {
       <?php endif; ?>
     </section>
   </main>
+
   <footer>
     <div>
       <p>
