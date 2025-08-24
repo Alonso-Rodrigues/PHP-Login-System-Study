@@ -69,10 +69,10 @@ if ($isLoggedIn) {
                       <td><?php echo htmlspecialchars($user['email']); ?></td>
                       <td>••••••••</td>
                       <td class="action-buttons">
-                        <a href="/app/actions/editUser.php?id=<?php echo $user['id']; ?>" class="btn btn-edit">
+                        <a href="/edituser?id=<?php echo $user['id']; ?>" class="btn btn-edit">
                           ✏️ Edit
                         </a>
-                        <a href="/app/actions/deleteUser.php?id=<?php echo $user['id']; ?>" class="btn btn-delete"
+                        <a href="/deleteuser?id=<?php echo $user['id']; ?>" class="btn btn-delete"
                            onclick="return confirm('Are you sure you want to delete <?php echo htmlspecialchars($user['name']); ?>?')">
                           🗑️ Delete
                         </a>
