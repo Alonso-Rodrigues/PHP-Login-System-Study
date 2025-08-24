@@ -42,40 +42,44 @@ if ($isLoggedIn) {
               }
             ?>
           </p>
-        <?php endif; ?>
+          <?php else: ?>
+            <p>Please log in to access the system features.</p>
+          <?php endif; ?>
       </section>
-      <section class="list-users">
-        <h2>User list</h2>
-        <table class="table-users">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Password</th>
-            </tr>
-          </thead>
-          <tbody>
-              <?php if (!empty($users)): ?>
-                <?php $contador = 1; ?>
-                <?php foreach ($users as $user): ?>
-                  <tr>
-                    <td><?php echo $contador++; ?></td>
-                    <td><?php echo htmlspecialchars($user['id']); ?></td>
-                    <td><?php echo htmlspecialchars($user['name']); ?></td>
-                    <td><?php echo htmlspecialchars($user['email']); ?></td>
-                    <td>••••••••</td>
-                  </tr>
-                <?php endforeach; ?>
-                <?php else: ?>
-                  <tr>
-                      <td colspan="5" style="text-align: center;">Nenhum usuário encontrado</td>
-                  </tr>
-              <?php endif; ?>
-            </tbody>
-        </table>              
-      </section>
+      <?php if ($isLoggedIn): ?>
+        <section class="list-users">
+          <h2>User list</h2>
+          <table class="table-users">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+              </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($users)): ?>
+                  <?php $contador = 1; ?>
+                  <?php foreach ($users as $user): ?>
+                    <tr>
+                      <td><?php echo $contador++; ?></td>
+                      <td><?php echo htmlspecialchars($user['id']); ?></td>
+                      <td><?php echo htmlspecialchars($user['name']); ?></td>
+                      <td><?php echo htmlspecialchars($user['email']); ?></td>
+                      <td>••••••••</td>
+                    </tr>
+                  <?php endforeach; ?>
+                  <?php else: ?>
+                    <tr>
+                        <td colspan="5" style="text-align: center;">No users found</td>
+                    </tr>
+                <?php endif; ?>
+              </tbody>
+          </table>              
+        </section>
+      <?php endif; ?>
     </section>
   </main>
   <footer>
