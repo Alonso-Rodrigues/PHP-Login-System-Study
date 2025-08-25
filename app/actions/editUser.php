@@ -30,7 +30,7 @@ try {
     exit();
 }
 
-// Processar formulário
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
@@ -42,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: /app/pages/home.php');
             exit();
         } catch (PDOException $e) {
-            // Erro na atualização
         }
     }
 }
@@ -50,28 +49,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit User</title>
     <link rel="stylesheet" href="/assets/css/geral.css">
+    <link rel="stylesheet" href="/assets/css/menu.css">
     <link rel="stylesheet" href="/assets/css/edit.css">
 </head>
+
 <body>
-    <div class="container">
-        <h2>Edit User</h2>
-        <form method="POST">
-            <div class="form-group">
-                <label>Name:</label>
-                <input type="text" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
-            </div>
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
-            </div>
-            <button type="submit" class="btn btn-save">Save</button>
-            <a href="/app/pages/home.php" class="btn btn-cancel">Cancel</a>
-        </form>
+    <?php include_once __DIR__ . '/../../app/includes/menu.php'; ?>
+    <main>
+        <section class="container-edit">
+            <h2>Edit User</h2>
+            <form method="POST" class="container-form-group">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+                </div>
+                <div class="form-group">
+                <button type="submit" class="btn btn-save">
+                    Save
+                </button>
+                <a href="/app/pages/home.php" class="btn btn-cancel">
+                    Cancel
+                </a>
+                </div>
+            </form>
+        </section>
+    </main>
+      <footer>
+    <div>
+      <p>
+        All rights reserved by Alonso's © Copyright 2025.
+      </p>
     </div>
+  </footer>
 </body>
+
 </html>
