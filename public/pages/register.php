@@ -37,9 +37,11 @@ if (isset($_POST['submit'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
   <link rel="stylesheet" href="../assets/css/register.css">
+  <link rel="stylesheet" href="/assets/css/menu.css"> 
 </head>
 
 <body>
+  <?php include_once __DIR__ . '/../../app/includes/menu.php'; ?>
   <main>
     <section>
       <form action="/register" method="POST">

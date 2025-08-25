@@ -6,7 +6,6 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
   <nav class="menu-items">
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/articles">Articles</a></li>
       <li><a href="/register">Register</a></li>
     </ul>
     
