@@ -15,9 +15,6 @@ if ($url === 'LOGOUT') {
 }
 
 switch ($url) {
-  case "ARTICLES":
-    require_once "pages/articles.php";
-    break;
   case "REGISTER":
     require_once "pages/register.php";
     break;
