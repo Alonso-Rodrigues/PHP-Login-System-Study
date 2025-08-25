@@ -19,8 +19,11 @@ if (isset($_POST['submit'])) {
       ':password' => $password
     ]);
 
-  
-    header('Location: /login');
+    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+        header('Location: /home');
+    } else {
+        header('Location: /login');
+    }
     exit();
   } else {
     echo "Error";
