@@ -2,10 +2,10 @@
   <section class="list-users">
     <h2>User list</h2>
 
-    <form action="" method="GET">
+    <form action="" method="GET" class="search-form">
       <input type="text" name="search" placeholder="Search by name or email" 
              value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';?>">
-      <button type="submit">Search</button>
+      <button type="submit">🔎 Search</button>
     </form>
 
     <table class="table-users">

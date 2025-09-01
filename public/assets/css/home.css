@@ -56,6 +56,40 @@ main {
   font-weight: 500;
 }
 
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  /* margin-bottom: 15px; */
+  margin: 1%;
+}
+
+.search-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.search-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-form button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 .table-users {
   width: 100%;
   border-collapse: collapse;
