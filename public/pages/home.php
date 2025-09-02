@@ -22,39 +22,32 @@ if ($isLoggedIn) {
   <title>Home</title>
 </head>
 
-<body>
-<?php include_once __DIR__ . '/../../app/includes/menu.php'; ?>
-  <main>
-    <section class="container-welcome">
-      <section class="welcome-user">
-          <h1>
-            Login System
-          </h1>
-          <?php if ($isLoggedIn): ?>
-          <p>Welcome back, 
-            <?php 
-              if (isset($_SESSION['user_name'])) {
-                  echo ucfirst(htmlspecialchars($_SESSION['user_name']));
-              } else {
-                  echo 'User'; 
-              }
-            ?>
-          </p>
-          <?php else: ?>
-            <p>Please log in to access the system features.</p>
-          <?php endif; ?>
+  <body>
+    <?php include_once __DIR__ . '/../../app/includes/menu.php'; ?>
+    <main>
+      <section class="container-welcome">
+        <section class="welcome-user">
+            <h1>
+              Login System
+            </h1>
+            <?php if ($isLoggedIn): ?>
+            <p>Welcome back, 
+              <?php 
+                if (isset($_SESSION['user_name'])) {
+                    echo ucfirst(htmlspecialchars($_SESSION['user_name']));
+                } else {
+                    echo 'User'; 
+                }
+              ?>
+            </p>
+            <?php else: ?>
+              <p>Please log in to access the system features.</p>
+            <?php endif; ?>
+        </section>
+          <?php include_once __DIR__ . '/../../app/includes/usersTable.php'; ?>
       </section>
-        <?php include_once __DIR__ . '/../../app/includes/usersTable.php'; ?>
-    </section>
-  </main>
-
-  <footer>
-    <div>
-      <p>
-        All rights reserved by Alonso's © Copyright 2025.
-      </p>
-    </div>
-  </footer>
-</body>
-
+    </main>
+    <?php include __DIR__ . '/../../app/templates/footer.php'; ?>
+  </body>
+  
 </html>
