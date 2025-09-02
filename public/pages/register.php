@@ -41,6 +41,7 @@ if (isset($_POST['submit'])) {
   <title>Register</title>
   <link rel="stylesheet" href="../assets/css/register.css">
   <link rel="stylesheet" href="/assets/css/menu.css"> 
+  <link rel="stylesheet" href="/assets/css/geral.css">
 </head>
 
 <body>
@@ -65,6 +66,7 @@ if (isset($_POST['submit'])) {
       </form>
     </section>
   </main>
+  <?php include __DIR__ . '/../../app/templates/footer.php'; ?>
 </body>
 
 </html>
