@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-  <?php include_once __DIR__ . '/../../app/includes/menu.php'; ?>
+  <?php include_once __DIR__ . '/../../app/templates/menu.php'; ?>
   <main>
     <section>
       <form action="/register" method="POST">

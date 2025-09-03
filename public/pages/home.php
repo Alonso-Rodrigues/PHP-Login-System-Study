@@ -8,46 +8,14 @@ if ($isLoggedIn) {
     require_once __DIR__ . '/../../app/actions/getUsersData.php';
     $users = getAllUsers();
 }
+
+$pageTitle = "Home";
+include __DIR__ . '/../../app/templates/header.php';
+include __DIR__ . '/../../app/templates/menu.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<main>
+  <?php include __DIR__ . '/../../app/templates/content.php'; ?>
+</main>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/css/geral.css">
-  <link rel="stylesheet" href="/assets/css/home.css">
-  <link rel="stylesheet" href="/assets/css/menu.css"> 
-  <title>Home</title>
-</head>
-
-  <body>
-    <?php include_once __DIR__ . '/../../app/includes/menu.php'; ?>
-    <main>
-      <section class="container-welcome">
-        <section class="welcome-user">
-            <h1>
-              Login System
-            </h1>
-            <?php if ($isLoggedIn): ?>
-            <p>Welcome back, 
-              <?php 
-                if (isset($_SESSION['user_name'])) {
-                    echo ucfirst(htmlspecialchars($_SESSION['user_name']));
-                } else {
-                    echo 'User'; 
-                }
-              ?>
-            </p>
-            <?php else: ?>
-              <p>Please log in to access the system features.</p>
-            <?php endif; ?>
-        </section>
-          <?php include_once __DIR__ . '/../../app/includes/usersTable.php'; ?>
-      </section>
-    </main>
-    <?php include __DIR__ . '/../../app/templates/footer.php'; ?>
-  </body>
-  
-</html>
+<?php include __DIR__ . '/../../app/templates/footer.php'; ?>

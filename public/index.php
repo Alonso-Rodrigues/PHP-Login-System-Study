@@ -34,6 +34,3 @@ switch ($url) {
     require_once "pages/home.php";
 }
 ?>
-
-
-
