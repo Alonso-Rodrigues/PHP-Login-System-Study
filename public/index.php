@@ -10,19 +10,19 @@ if ($url === 'LOGINPROCESS' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Process logout
 if ($url === 'LOGOUT') {
-    require_once __DIR__ . '/../app/actions/logout.php';
+    require_once __DIR__ . '/../app/views/home.php';
     exit;
 }
 
 switch ($url) {
   case "REGISTER":
-    require_once "pages/register.php";
+    require_once __DIR__ . '/../app/views/register.php';
     break;
   case "LOGIN":
-    require_once "pages/login.php";
+    require_once __DIR__ . '/../app/views/login.php';
     break;
   case "HOME":
-    require_once "pages/home.php";
+    require_once __DIR__ . '/../app/views/home.php';
     break;
   case "EDITUSER":
     require_once __DIR__ . '/../app/actions/editUser.php';
@@ -31,6 +31,5 @@ switch ($url) {
     require_once __DIR__ . '/../app/actions/deleteUser.php';
     break;
   default:
-    require_once "pages/home.php";
+    require_once __DIR__ . '/../app/views/home.php';
 }
-?>
