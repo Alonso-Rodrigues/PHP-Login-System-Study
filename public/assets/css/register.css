@@ -70,6 +70,11 @@ h1 {
   margin-bottom: 10%;
 }
 
+.error {
+  color: red;
+  font-weight: bold;
+}
+
 input {
   height: 5%;
   width: 50%;
