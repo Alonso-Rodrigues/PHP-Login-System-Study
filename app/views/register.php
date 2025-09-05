@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
   $check->execute([':email' => $email]);
 
   if ($check->fetch()) {
-      echo "This email is already registered!";
+       $error = "This email is already registered!";
   } else {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -54,6 +54,11 @@ if (isset($_POST['submit'])) {
     <section>
       <form action="/register" method="POST">
         <h1>Register Form</h1>
+        <?php if (!empty($error)): ?>
+          <div class="error">
+            <?= htmlspecialchars($error) ?>
+          </div>
+        <?php endif; ?>
       <label for="name">Name</label>
       <input type="text" placeholder="Name" name="name" id="name" required>
 
