@@ -15,4 +15,5 @@
         <p>Please log in to access the system features.</p>
       <?php endif; ?>
   </section>
+  <?php include __DIR__ . '/usersTable.php'; ?>
 </section>
