@@ -7,8 +7,12 @@ if (isset($_POST['submit'])) {
   $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
   $password = $_POST['password'];
 
-  if ($name && $email && $password) {
-   
+  $check = $connect->prepare("SELECT id FROM users WHERE email = :email LIMIT 1");
+  $check->execute([':email' => $email]);
+
+  if ($check->fetch()) {
+      echo "This email is already registered!";
+  } else {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO users (name, email, password) VALUES (:name, :email, :password)";
@@ -19,14 +23,14 @@ if (isset($_POST['submit'])) {
       ':password' => $password
     ]);
 
-    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-        header('Location: /home');
-    } else {
-        header('Location: /login');
-    }
+    $userId = $connect->lastInsertId();
+
+    $_SESSION['logged_in'] = true;
+    $_SESSION['user_id'] = $userId;
+    $_SESSION['user_name'] = $name;
+
+    header('Location: /home');
     exit();
-  } else {
-    echo "Error";
   }
 }
 
