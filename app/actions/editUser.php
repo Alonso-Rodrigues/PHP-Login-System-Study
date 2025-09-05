@@ -2,12 +2,12 @@
 session_start();
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header('Location: /app/pages/login.php');
+    header('Location: /login.php');
     exit();
 }
 
 if (!isset($_GET['id'])) {
-    header('Location: /app/pages/home.php');
+    header('Location: /home');
     exit();
 }
 
@@ -22,11 +22,11 @@ try {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if (!$user) {
-        header('Location: /app/pages/home.php');
+        header('Location: /home');
         exit();
     }
 } catch (PDOException $e) {
-    header('Location: /app/pages/home.php');
+    header('Location: /home');
     exit();
 }
 
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             $stmt = $connect->prepare("UPDATE users SET name = ?, email = ? WHERE id = ?");
             $stmt->execute([$name, $email, $userId]);
-            header('Location: /app/pages/home.php');
+            header('Location: /home');
             exit();
         } catch (PDOException $e) {
         }
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <?php include_once __DIR__ . '/../../app/includes/menu.php'; ?>
+    <?php include __DIR__ . '../../views/partials/menu.php'; ?>
     <main>
         <section class="container-edit">
             <h2>Edit User</h2>

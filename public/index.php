@@ -1,5 +1,4 @@
 <?php
-
 $url = strtoupper($_GET['url'] ?? 'HOME');
 
 // Process login
@@ -10,7 +9,7 @@ if ($url === 'LOGINPROCESS' && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Process logout
 if ($url === 'LOGOUT') {
-    require_once __DIR__ . '/../app/views/home.php';
+    require_once __DIR__ . '/../app/actions/logout.php';
     exit;
 }
 
