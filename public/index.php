@@ -13,7 +13,7 @@ switch ($url) {
     case 'login':
         $controller->login();
         break;
-    case 'loginprocess': 
+    case 'loginprocess':
         require_once __DIR__ . '/../app/actions/loginProcess.php';
         exit;
     case 'home':
@@ -22,6 +22,12 @@ switch ($url) {
     case 'logout':
         $controller->logout();
         break;
+    case 'edituser':         
+        require_once __DIR__ . '/../app/actions/editUser.php';
+        exit;
+    case 'deleteuser':       
+        require_once __DIR__ . '/../app/actions/deleteUser.php';
+        exit;
     default:
         $controller->home();
 }
