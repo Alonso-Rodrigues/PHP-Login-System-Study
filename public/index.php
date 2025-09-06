@@ -13,6 +13,9 @@ switch ($url) {
     case 'login':
         $controller->login();
         break;
+    case 'loginprocess': 
+        require_once __DIR__ . '/../app/actions/loginProcess.php';
+        exit;
     case 'home':
         $controller->home();
         break;
