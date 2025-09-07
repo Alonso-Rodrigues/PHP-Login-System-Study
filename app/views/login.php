@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include __DIR__ . '/../views/partials/header.php'; ?>
+<?php include __DIR__ . '/../views/partials/menu.php'; ?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="../assets/css/login.css">
-</head>
+<main>
+  <section>
+    <form action="/loginprocess" method="POST" class="login">
+      <h1>Login</h1>
+      <input type="email" name="email" placeholder="email">
+      <input type="password" name="password" placeholder="password">
+      <button type="submit" name="submit">Send</button>
+    </form>
+  </section>
+</main>
 
-<body>
-  <main>
-    <section>
-      <form action="/loginprocess" method="POST" class="login">
-        <h1>Login</h1>
-        <input type="email" name="email" placeholder="email">
-        <input type="password" name="password" placeholder="password">
-        <button type="submit" name="submit">Send</button>
-      </form>
-    </section>
-  </main>
-</body>
-
-</html>
+<?php include __DIR__ . '/../views/partials/footer.php'; ?>

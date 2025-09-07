@@ -1,4 +1,3 @@
-
 <?php include __DIR__ . '/../views/partials/header.php'; ?>
 <?php include __DIR__ . '/../views/partials/menu.php'; ?>
 
