@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   align-content: space-around;
-  height: 10vh;
-  width: 98vw;
+  /* min-height: 20vh;
+  width: 98vw; */
   color: aliceblue;
   font-weight: 500;
   flex-wrap: wrap;
