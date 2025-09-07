@@ -22,12 +22,20 @@ switch ($url) {
     case 'logout':
         $controller->logout();
         break;
-    case 'edituser':         
-        require_once __DIR__ . '/../app/actions/editUser.php';
+    case 'edituser':
+    if (isset($_GET['id'])) {
+        $controller->edit((int)$_GET['id']);
+    } else {
+        header('Location: /home');
         exit;
-    case 'deleteuser':       
-        require_once __DIR__ . '/../app/actions/deleteUser.php';
-        exit;
-    default:
-        $controller->home();
+    }
+    break;
+    case 'deleteuser':
+    $id = $_GET['id'] ?? null;
+    if ($id) {
+        $controller->delete((int)$id);
+    } else {
+        header('Location: /home?error=id_missing');
+    }
+    break;
 }
