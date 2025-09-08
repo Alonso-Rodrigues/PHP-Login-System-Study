@@ -3,11 +3,10 @@
   align-items: center;
   justify-content: space-between;
   align-content: space-around;
-  /* min-height: 20vh;
-  width: 98vw; */
+  min-height: 10%;
+  width: 100%;
   color: aliceblue;
   font-weight: 500;
-  flex-wrap: wrap;
 }
 
 .menu-items {
