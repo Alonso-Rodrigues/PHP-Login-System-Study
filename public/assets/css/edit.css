@@ -59,11 +59,11 @@
 }
 
 .btn-btn-save {
-    font-size: large;
     height: 100%;
     width: 30%;
     background-color: rgba(0, 0, 0, 0.5);
     border-color: rgba(255, 255, 255, 0.3);
+    font-size: large;
     cursor: pointer;
     box-sizing: border-box;
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
