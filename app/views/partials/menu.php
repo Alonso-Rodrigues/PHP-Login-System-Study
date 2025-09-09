@@ -1,7 +1,6 @@
 <?php
 $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 ?>
-
 <header class="menu-container">
   <nav class="menu-items">
     <ul>
@@ -15,6 +14,7 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
           Log out
         </a>
       </button>
+
     <?php else: ?>
       <button class="login-button">
         <a href="/login">
@@ -22,5 +22,6 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
         </a>
       </button>
     <?php endif; ?>
+
   </nav>
 </header>

@@ -1,8 +1,8 @@
 /* main.css */
 /* Import other files */
-@import url('edit.css');
 @import url('geral.css');
 @import url('content.css');
+@import url('usersTable.css');
+@import url('edit.css');
 @import url('login.css');
-@import url('menu.css');
 @import url('register.css');
