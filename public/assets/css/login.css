@@ -1,71 +1,50 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+.container-login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(45deg, rgb(22, 139, 248), rgb(53, 53, 53));
+  border: 0.01rem solid rgba(255, 255, 255, 0.9);
 }
 
-body,
-main,
-section,
-.login {
+.container-login-form {
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  height: 90%;
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0.01rem solid rgba(255, 255, 255, 0.9);
+  gap: 3%;
 }
 
-.login,
-button {
-  border: 0.1mm solid rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
+.container-login-form input {
+  height: 8%;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  color: black;
 }
 
-h1,
-button {
-  color: aliceblue;
-  font-weight: 500;
+.container-login-form input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
 
-
-
-body {
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
+.container-login-form input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
 }
 
-main {
-  height: 98vh;
-  width: 98vw;
-  background-image: linear-gradient(45deg, rgb(22, 139, 248), rgb(53, 53, 53));
-  border-radius: 10px;
-}
-
-section {
-  height: 80%;
-  width: 40%;
-}
-
-.login {
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  height: 86%;
-  width: 85%;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-input {
-  height: 5%;
-  width: 60%;
-  margin: -10%;
-  border-radius: 5px;
-}
-
-button {
-  font-size: large;
+.container-login-form button {
   height: 8%;
   width: 30%;
+  font-size: large;
   background-color: rgba(0, 0, 0, 0.5);
   border-color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
@@ -73,10 +52,6 @@ button {
   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-sizing: border-box;
-  color: black;
-  font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.2);
-} */
+.container-login-form button:hover {
+  background-color: rgba(7, 185, 80, 0.7);
+}
