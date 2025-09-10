@@ -7,21 +7,18 @@ $url = strtolower($_GET['url'] ?? 'home');
 $controller = new UserController($connect);
 
 switch ($url) {
-    case 'register':
-        $controller->register();
-        break;
     case 'login':
         $controller->login();
         break;
-    case 'loginprocess':
-        require_once __DIR__ . '/../app/actions/loginProcess.php';
-        exit;
+
     case 'home':
         $controller->home();
         break;
-    case 'logout':
-        $controller->logout();
+
+    case 'register':
+        $controller->register();
         break;
+
     case 'edituser':
     if (isset($_GET['id'])) {
         $controller->edit((int)$_GET['id']);
@@ -30,6 +27,7 @@ switch ($url) {
         exit;
     }
     break;
+
     case 'deleteuser':
     $id = $_GET['id'] ?? null;
     if ($id) {
@@ -37,5 +35,9 @@ switch ($url) {
     } else {
         header('Location: /home?error=id_missing');
     }
+    break;
+    
+    case 'logout':
+        $controller->logout();
     break;
 }

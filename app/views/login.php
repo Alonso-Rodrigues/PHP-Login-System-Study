@@ -2,7 +2,7 @@
 <?php include __DIR__ . '/../views/partials/menu.php'; ?>
 
 <section class="container-login">
-  <form action="/loginprocess" method="POST" class="container-login-form">
+  <form action="/login" method="POST" class="container-login-form">
     <h1>Login</h1>
     <input type="email" name="email" placeholder="email">
     <input type="password" name="password" placeholder="password">
