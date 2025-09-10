@@ -8,10 +8,6 @@ class UserController {
         $this->userModel = new User($db);
     }
 
-    public function register() {
-        require_once __DIR__ . '/../views/register.php';
-    }
-
     public function login() {
         require_once __DIR__ . '/../views/login.php';
     }
@@ -30,6 +26,36 @@ class UserController {
 
     public function logout() {
         require_once __DIR__ . '/../actions/logout.php';
+    }
+
+    public function register() {
+    $pageTitle = "Register";
+    $error = null;
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $name = trim($_POST['name']);
+        $email = trim($_POST['email']);
+        $password = trim($_POST['password']);
+
+        if (empty($name) || empty($email) || empty($password)) {
+            $error = "All fields are required!";
+        } elseif ($this->userModel->findByEmail($email)) {
+            $error = "Email already registered!";
+        } else {
+            if ($this->userModel->create($name, $email, $password)) {
+            if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+                header("Location: /home?success=registered");
+            } else {
+                header("Location: /login?success=registered");
+            }
+            exit();
+            } else {
+                $error = "Error creating user.";
+            }
+        }
+    }
+
+    require_once __DIR__ . '/../views/register.php';
     }
 
     public function edit($id) {
