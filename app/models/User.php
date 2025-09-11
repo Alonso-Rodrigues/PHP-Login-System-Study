@@ -18,6 +18,12 @@ class User {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getById($id) {
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function create($name, $email, $password) {
         $stmt = $this->db->prepare("INSERT INTO users (name, email, password) 
                                     VALUES (:name, :email, :password)");
@@ -26,12 +32,6 @@ class User {
             ':email' => $email,
             ':password' => password_hash($password, PASSWORD_DEFAULT)
         ]);
-    }
-
-    public function getById($id) {
-        $stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
-        $stmt->execute([$id]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function update($id, $name, $email) {
