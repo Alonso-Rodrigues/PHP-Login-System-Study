@@ -4,40 +4,32 @@ require_once __DIR__ . '/../app/connect/config.php';
 require_once __DIR__ . '/../app/controllers/UserController.php';
 
 $url = strtolower($_GET['url'] ?? 'home');
-$controller = new UserController($connect);
 
-switch ($url) {
-    case 'login':
-        $controller->login();
-        break;
+$routes = [
+    'login' => ['UserController', 'login'],
+    'home' => ['UserController', 'home'],
+    'register' => ['UserController', 'register'],
+    'edituser' => ['UserController', 'edit'],
+    'deleteuser' => ['UserController', 'delete'],
+    'logout' => ['UserController', 'logout'],
+];
 
-    case 'home':
-        $controller->home();
-        break;
+if (isset($routes[$url])){
+    [$controllerName, $method] = $routes[$url];
+    $controller = new $controllerName($connect);
 
-    case 'register':
-        $controller->register();
-        break;
-
-    case 'edituser':
-    if (isset($_GET['id'])) {
-        $controller->edit((int)$_GET['id']);
+    if(in_array($method, ['edit', 'delete'])){
+        $id = $_GET['id'] ?? null;
+        if($id){
+            $controller->$method((int)$id);
+        } else {
+            header('Location: /home?error=id_missing');
+            exit;
+        }
     } else {
-        header('Location: /home');
-        exit;
+        $controller->$method();
     }
-    break;
 
-    case 'deleteuser':
-    $id = $_GET['id'] ?? null;
-    if ($id) {
-        $controller->delete((int)$id);
-    } else {
-        header('Location: /home?error=id_missing');
-    }
-    break;
-    
-    case 'logout':
-        $controller->logout();
-    break;
+}  else {
+    (new UserController($connect))->home();
 }
