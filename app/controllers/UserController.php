@@ -9,8 +9,12 @@ class UserController {
     }
 
     public function login() {
+        if (isset($_SESSION['user_id'])) {
+            header('Location: /home');
+            exit;
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      
             $email = trim($_POST['email']);
             $password = trim($_POST['password']);
 
@@ -30,8 +34,10 @@ class UserController {
                 exit;
             }
         }
-        require_once __DIR__ . '/../views/login.php';
+        
+    require_once __DIR__ . '/../views/login.php';
     }
+
 
     public function home() {
         $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
@@ -110,17 +116,17 @@ class UserController {
     }
 
     public function delete($id) {
-    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+        if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         header('Location: /login');
         exit();
-    }
+        }
 
-    if ($this->userModel->delete($id)) {
-        header('Location: /home?success=deleted');
-    } else {
-        header('Location: /home?error=delete_failed');
-    }
-    exit();
+        if ($this->userModel->delete($id)) {
+            header('Location: /home?success=deleted');
+        } else {
+            header('Location: /home?error=delete_failed');
+        }
+        exit();
     }
 
 }
