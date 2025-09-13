@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../middleware/AuthMiddleware.php';
 
 class UserController {
     private $userModel;
@@ -9,10 +10,7 @@ class UserController {
     }
 
     public function login() {
-        if (isset($_SESSION['user_id'])) {
-            header('Location: /home');
-            exit;
-        }
+        AuthMiddleware::guestOnly();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = trim($_POST['email']);
@@ -40,19 +38,15 @@ class UserController {
 
 
     public function home() {
-        $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 
-        $users = [];
-        if ($isLoggedIn) {
-            $users = $this->userModel->getAllUsers();
-        }
+        AuthMiddleware::requireLogin();
 
+        $users = $this->userModel->getAll();
         $pageTitle = "Home";
         require __DIR__ . '/../views/home.php';
     }
 
     public function logout() {
-        session_start();
         session_unset();
         session_destroy();
         header('Location: /home');
@@ -60,8 +54,10 @@ class UserController {
     }
 
     public function register() {
-    $pageTitle = "Register";
-    $error = null;
+        AuthMiddleware::requireLogin();
+
+        $pageTitle = "Register";
+        $error = null;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $name = trim($_POST['name']);
@@ -89,11 +85,8 @@ class UserController {
     require_once __DIR__ . '/../views/register.php';
     }
 
-    public function edit($id) {
-        if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-            header('Location: /login');
-            exit();
-        }
+    public function edit($id) { 
+        AuthMiddleware::requireLogin();
 
         $user = $this->userModel->getById($id);
 
@@ -116,6 +109,9 @@ class UserController {
     }
 
     public function delete($id) {
+
+        AuthMiddleware::requireLogin();
+
         if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         header('Location: /login');
         exit();
