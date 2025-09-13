@@ -7,7 +7,7 @@ class User {
         $this->db = $db;
     }
 
-    public function getAllUsers() {
+    public function getAll() {
         $stmt = $this->db->query("SELECT * FROM users");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
