@@ -24,6 +24,7 @@ class UserController {
                 $_SESSION['user_name'] = $user['name'];
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['logged_in'] = true;
+                $_SESSION['role'] = $user['role'];
 
                 header('Location: /home');
                 exit;
@@ -36,12 +37,15 @@ class UserController {
     require_once __DIR__ . '/../views/login.php';
     }
 
-
     public function home() {
+        $users = [];
 
-        AuthMiddleware::requireLogin();
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+            if (in_array($_SESSION['role'], ['user', 'admin'])) {
+                $users = $this->userModel->getAll();
+            }
+        }
 
-        $users = $this->userModel->getAll();
         $pageTitle = "Home";
         require __DIR__ . '/../views/home.php';
     }
@@ -49,12 +53,14 @@ class UserController {
     public function logout() {
         session_unset();
         session_destroy();
+        session_regenerate_id(true);
         header('Location: /home');
         exit;
     }
 
     public function register() {
         AuthMiddleware::requireLogin();
+        AuthMiddleware::requireRole('admin'); 
 
         $pageTitle = "Register";
         $error = null;
@@ -87,6 +93,7 @@ class UserController {
 
     public function edit($id) { 
         AuthMiddleware::requireLogin();
+        AuthMiddleware::requireRole('admin'); 
 
         $user = $this->userModel->getById($id);
 
@@ -109,12 +116,12 @@ class UserController {
     }
 
     public function delete($id) {
-
         AuthMiddleware::requireLogin();
+        AuthMiddleware::requireRole('admin');
 
-        if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-        header('Location: /login');
-        exit();
+        if ($id == $_SESSION['user_id']) {
+            header('Location: /home?error=cannot_delete_self');
+            exit();
         }
 
         if ($this->userModel->delete($id)) {
@@ -124,5 +131,6 @@ class UserController {
         }
         exit();
     }
+
 
 }

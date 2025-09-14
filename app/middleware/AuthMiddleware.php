@@ -13,4 +13,18 @@ class AuthMiddleware {
             exit();
         }
     }
+
+    public static function requireRole($role) {
+        if (!isset($_SESSION['role']) || $_SESSION['role'] !== $role) {
+            header('Location: /home?error=unauthorized');
+            exit();
+        }
+    }
+
+    public static function requireRoles(array $roles) {
+        if (!isset($_SESSION['role']) || !in_array($_SESSION['role'], $roles)) {
+            header('Location: /home?error=unauthorized');
+            exit();
+        }
+    }
 }
