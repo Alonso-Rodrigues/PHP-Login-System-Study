@@ -22,6 +22,7 @@ $isLoggedIn = $isLoggedIn ?? false;
           <th>Email</th>
           <th>Password</th>
           <th>Actions</th>
+          <th>Roles</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +52,15 @@ $isLoggedIn = $isLoggedIn ?? false;
                    onclick="return confirm('Are you sure you want to delete <?php echo htmlspecialchars($user['name']); ?>?')">
                   🗑️ Delete
                 </a>
+              </td>
+              <td >
+                <form action="/updaterole" method="POST">
+                  <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+                  <select name="role" class="role-dropdown" onchange="this.form.submit()">
+                     <option value="user" <?php echo $user['role'] === 'user' ? 'selected' : ''; ?>>User</option>
+                     <option value="admin" <?php echo $user['role'] === 'admin' ? 'selected' : ''; ?>>Admin</option>
+                  </select>
+                </form>
               </td>
             </tr>
           <?php endforeach; ?>
