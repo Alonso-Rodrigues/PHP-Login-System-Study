@@ -132,5 +132,31 @@ class UserController {
         exit();
     }
 
+    public function updateRole() {
+        AuthMiddleware::requireLogin();
+        AuthMiddleware::requireRole('admin'); 
 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = intval($_POST['id']);
+            $role = $_POST['role'];
+
+            $validRoles = ['visitor', 'user', 'admin'];
+            if (!in_array($role, $validRoles)) {
+                header('Location: /home?error=invalid_role');
+                exit();
+            }
+
+            if ($id == $_SESSION['user_id']) {
+                header('Location: /home?error=cannot_change_self_role');
+                exit();
+            }
+
+            if ($this->userModel->updateRole($id, $role)) {
+                header('Location: /home?success=role_updated');
+            } else {
+                header('Location: /home?error=role_update_failed');
+            }
+            exit();
+        }
+    }
 }

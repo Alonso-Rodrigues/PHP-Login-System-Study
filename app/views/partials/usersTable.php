@@ -54,10 +54,9 @@ $isLoggedIn = $isLoggedIn ?? false;
                 </a>
               </td>
               <td >
-                <form action="/updaterole" method="POST" style="display:inline;">
+                <form action="/updaterole" method="POST">
                   <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
                   <select name="role" class="role-dropdown" onchange="this.form.submit()">
-                     <option value="" <?php echo $user['role'] === 'user' ? 'selected' : ''; ?>>Set</option>
                      <option value="user" <?php echo $user['role'] === 'user' ? 'selected' : ''; ?>>User</option>
                      <option value="admin" <?php echo $user['role'] === 'admin' ? 'selected' : ''; ?>>Admin</option>
                   </select>

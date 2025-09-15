@@ -12,6 +12,7 @@ $routes = [
     'edituser' => ['UserController', 'edit'],
     'deleteuser' => ['UserController', 'delete'],
     'logout' => ['UserController', 'logout'],
+    'updaterole' => ['UserController', 'updateRole'],
 ];
 
 if (isset($routes[$url])){
