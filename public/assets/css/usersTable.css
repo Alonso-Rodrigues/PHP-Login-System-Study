@@ -134,3 +134,20 @@
 .btn-delete {
   background-color: #ef4444;
 }
+
+.role-dropdown {
+  height: 40px;
+  width: 80px;
+  align-items: center;
+  text-align: center;
+  color: aliceblue;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.role-dropdown,
+option {
+  text-align: center;
+  font-size: 12px;
+  color: black;
+  cursor: pointer;
+}
