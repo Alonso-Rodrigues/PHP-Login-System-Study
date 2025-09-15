@@ -140,7 +140,7 @@ class UserController {
             $id = intval($_POST['id']);
             $role = $_POST['role'];
 
-            $validRoles = ['visitor', 'user', 'admin'];
+            $validRoles = ['user', 'admin'];
             if (!in_array($role, $validRoles)) {
                 header('Location: /home?error=invalid_role');
                 exit();
