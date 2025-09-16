@@ -21,8 +21,10 @@ $isLoggedIn = $isLoggedIn ?? false;
           <th>Name</th>
           <th>Email</th>
           <th>Password</th>
-          <th>Actions</th>
-          <th>Roles</th>
+          <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+            <th>Actions</th>
+            <th>Roles</th>
+          <?php endif; ?>
         </tr>
       </thead>
       <tbody>
@@ -45,23 +47,25 @@ $isLoggedIn = $isLoggedIn ?? false;
               <td><?php echo htmlspecialchars($user['name']); ?></td>
               <td><?php echo htmlspecialchars($user['email']); ?></td>
               <td>••••••••</td>
-              <td class="action-buttons">
-                <a href="/edituser?id=<?php echo $user['id']; ?>" class="btn btn-edit">✏️ Edit</a>
-                <a href="/deleteuser?id=<?php echo $user['id']; ?>" 
-                   class="btn btn-delete"
-                   onclick="return confirm('Are you sure you want to delete <?php echo htmlspecialchars($user['name']); ?>?')">
-                  🗑️ Delete
-                </a>
-              </td>
-              <td >
-                <form action="/updaterole" method="POST">
-                  <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
-                  <select name="role" class="role-dropdown" onchange="this.form.submit()">
-                     <option value="user" <?php echo $user['role'] === 'user' ? 'selected' : ''; ?>>User</option>
-                     <option value="admin" <?php echo $user['role'] === 'admin' ? 'selected' : ''; ?>>Admin</option>
-                  </select>
-                </form>
-              </td>
+              <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                <td class="action-buttons">
+                  <a href="/edituser?id=<?php echo $user['id']; ?>" class="btn btn-edit">✏️ Edit</a>
+                  <a href="/deleteuser?id=<?php echo $user['id']; ?>" 
+                    class="btn btn-delete"
+                    onclick="return confirm('Are you sure you want to delete <?php echo htmlspecialchars($user['name']); ?>?')">
+                    🗑️ Delete
+                  </a>
+                </td>
+                <td >
+                  <form action="/updaterole" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+                    <select name="role" class="role-dropdown" onchange="this.form.submit()">
+                      <option value="user" <?php echo $user['role'] === 'user' ? 'selected' : ''; ?>>User</option>
+                      <option value="admin" <?php echo $user['role'] === 'admin' ? 'selected' : ''; ?>>Admin</option>
+                    </select>
+                  </form>
+                </td>
+              <?php endif; ?>
             </tr>
           <?php endforeach; ?>
         <?php else: ?>
