@@ -5,7 +5,9 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
   <nav class="menu-items">
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/register">Register</a></li>
+      <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+        <li><a href="/register">Register</a></li>
+      <?php endif; ?>
     </ul>
     
     <?php if ($isLoggedIn): ?>
@@ -25,3 +27,6 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 
   </nav>
 </header>
+
+
+
