@@ -206,6 +206,11 @@ body {
   #nav-container.active #nav-list {
     display: flex;
   }
+
+  .menu-items li {
+    width: 25%;
+    height: 5%;
+  }
 }
 
 /* ---|Footer|--- */
