@@ -1,32 +1,31 @@
 <?php
 $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 ?>
+<script src="/assets/js/main.js" defer></script>
+
 <header class="menu-container">
-  <nav class="menu-items">
-    <ul>
+  <nav id="nav-container" class="menu-items">
+
+    <button id="btn-mobile">Menu
+      <span id="hamburger"></span>
+    </button>
+
+    <ul id="nav-list">
       <li><a href="/">Home</a></li>
       <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
         <li><a href="/register">Register</a></li>
       <?php endif; ?>
-    </ul>
-    
-    <?php if ($isLoggedIn): ?>
-      <button class="logout-button">
-        <a href="/logout">
-          Log out
-        </a>
-      </button>
 
-    <?php else: ?>
-      <button class="login-button">
-        <a href="/login">
-          Login
-        </a>
-      </button>
-    <?php endif; ?>
+      <?php if ($isLoggedIn): ?>
+        <li>
+          <a href="/logout" class="logout-button">Log out</a>
+        </li>
+      <?php else: ?>
+        <li>
+          <a href="/login" class="login-button">Login</a>
+        </li>
+      <?php endif; ?>
+    </ul>
 
   </nav>
 </header>
-
-
-
