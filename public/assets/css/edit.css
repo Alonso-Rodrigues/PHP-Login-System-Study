@@ -91,3 +91,29 @@
 .btn-btn-cancel:hover {
     background-color: rgba(185, 7, 7, 0.7);
 }
+
+/* ---|Mobile-Menu-Responsive|---*/
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .container-form-edit {
+        height: 90%;
+        width: 80%;
+        font-size: small;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .container-form-edit {
+        height: 90%;
+        width: 60%;
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+    .container-form-edit {
+        height: 80%;
+        width: 50%;
+        font-size: large;
+    }
+}
