@@ -74,6 +74,7 @@ $isLoggedIn = $isLoggedIn ?? false;
           </tr>
         <?php endif; ?>
       </tbody>
-    </table>              
+    </table>
+               
   </section>
 <?php endif; ?>

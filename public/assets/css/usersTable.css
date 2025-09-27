@@ -3,9 +3,8 @@
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  width: 95%;
-  max-width: 1200px;
-  min-height: 50%;
+  height: auto;
+  width: 70%;
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.9);
   padding: 2%;
@@ -140,10 +139,216 @@
   width: 80px;
   align-items: center;
   text-align: center;
-  background-color: rgb(54, 54, 54);  
+  background-color: rgb(54, 54, 54);
 }
 
 .role-dropdown,
 option {
   text-align: center;
+}
+
+/* ---|Mobile-Menu-Responsive|---*/
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .list-users {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90%;
+    width: 95%;
+  }
+
+  .search-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-form button {
+    height: auto;
+    width: 90%;
+  }
+
+  .table-users {
+    display: block;
+    align-items: center;
+    justify-items: center;
+    height: 95%;
+    width: 90%;
+    overflow: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #3B82F6 black;
+  }
+
+  .table-users thead {
+    display: none;
+  }
+
+  .table-users td:nth-child(1) {
+    display: none;
+  }
+
+  .table-users tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 1%;
+    margin: 3%;
+    padding: 3%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .table-users tr {
+    display: block;
+    width: 80%;
+    height: auto;
+  }
+
+  .table-users td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .table-users tbody {
+    display: block;
+    justify-items: center;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .list-users {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90%;
+    width: 95%;
+  }
+
+  .search-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-form button {
+    height: auto;
+    width: 90%;
+  }
+
+  .table-users {
+    display: block;
+    align-items: center;
+    justify-items: center;
+    height: 95%;
+    width: 90%;
+    margin: auto;
+    overflow: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #3B82F6 black;
+  }
+
+  .table-users thead {
+    display: none;
+  }
+
+  .table-users td:nth-child(1) {
+    display: none;
+  }
+
+  .table-users tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    gap: 1%;
+    margin: 3%;
+    padding: 3%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .table-users td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .table-users tbody {
+    display: block;
+    justify-items: center;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  .list-users {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90%;
+    width: 95%;
+  }
+
+  .search-form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .search-form button {
+    height: auto;
+    width: 50%;
+  }
+
+  .table-users {
+    display: block;
+    align-items: center;
+    justify-items: center;
+    height: 95%;
+    width: 100%;
+    margin: auto;
+    overflow: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #3B82F6 black;
+  }
+
+  .table-users thead {
+    display: none;
+  }
+
+  .table-users td:nth-child(1) {
+    display: none;
+  }
+
+  .table-users tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 1%;
+    margin: 3%;
+    padding: 3%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .table-users td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .table-users tbody {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
