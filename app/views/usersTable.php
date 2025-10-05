@@ -44,7 +44,11 @@ $isLoggedIn = $isLoggedIn ?? false;
             <tr>
               <td><?php echo $count++; ?></td>
               <td><?php echo htmlspecialchars($user['id']); ?></td>
-              <td><?php echo htmlspecialchars($user['name']); ?></td>
+              <td>
+                <a href="/user?id=<?= $user['id']; ?>">
+                  <?= htmlspecialchars($user['name']); ?>
+                </a>
+              </td>
               <td><?php echo htmlspecialchars($user['email']); ?></td>
               <td>••••••••</td>
               <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>

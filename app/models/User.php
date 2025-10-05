@@ -39,6 +39,13 @@ class User {
         return $stmt->execute([$name, $email, $id]);
     }
 
+    public function updateUserPhoto($id, $photoPath) {
+        $stmt = $this->db->prepare("UPDATE users SET photo = :photo WHERE id = :id");
+        $stmt->bindParam(':photo', $photoPath, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
     public function delete($id) {
     $stmt = $this->db->prepare("DELETE FROM users WHERE id = ?");
     return $stmt->execute([$id]);

@@ -14,6 +14,6 @@
       <?php else: ?>
         <p>Please log in to access the system features.</p>
       <?php endif; ?>
-      <?php include __DIR__ . '/usersTable.php'; ?>
+      <?php include __DIR__ . '/../usersTable.php'; ?>
   </section>
 </section>
