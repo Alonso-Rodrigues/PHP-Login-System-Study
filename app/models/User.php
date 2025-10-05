@@ -48,4 +48,17 @@ class User {
         $stmt = $this->db->prepare("UPDATE users SET role = :role WHERE id = :id");
         return $stmt->execute([':role' => $role, ':id' => $id]);
     }
+
+    public function getUsersPaginated($limit, $offset) {
+        $stmt = $this->db->prepare("SELECT * FROM users LIMIT :limit OFFSET :offset");
+        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getTotalUsers() {
+        $stmt = $this->db->query("SELECT COUNT(*) as total FROM users");
+        return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
+    }
 }
