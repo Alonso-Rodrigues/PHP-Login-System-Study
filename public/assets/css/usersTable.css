@@ -8,6 +8,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.9);
   margin: 3%;
+  padding: 1%;
 }
 
 .list-users h2 {
@@ -144,6 +145,24 @@
 .role-dropdown,
 option {
   text-align: center;
+}
+
+.pagination {
+  margin: 2%;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 6px 12px;
+  text-decoration: none;
+  border: 1px solid aliceblue;
+  border-radius: 4px;
+}
+
+.pagination a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #000000;
+  border: 1px solid black;
 }
 
 /* ---|Mobile-Menu-Responsive|---*/

@@ -164,4 +164,38 @@ class UserController {
             exit();
         }
     }
+
+    public function userPage() {
+        if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+            header("Location: /");
+            exit;
+        }
+
+        $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+        $user = $this->userModel->getById($id);
+
+        if (!$user) {
+            echo "User not found";
+            exit;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photo'])) {
+            $uploadDir = __DIR__ . '/../../public/uploads/users/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
+
+            $fileName = $id . "_" . basename($_FILES['photo']['name']);
+            $targetFile = $uploadDir . $fileName;
+
+            if (move_uploaded_file($_FILES['photo']['tmp_name'], $targetFile)) {
+                $photoPath = "/uploads/users/" . $fileName;
+                $this->userModel->updateUserPhoto($id, $photoPath);
+                $user['photo'] = $photoPath;
+            }
+        }
+
+        require __DIR__ . '/../views/userPage.php';
+    }
+
 }
