@@ -39,10 +39,15 @@ class UserController {
 
     public function home() {
         $users = [];
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $limit = 5; 
+        $offset = ($page - 1) * $limit;
 
         if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             if (in_array($_SESSION['role'], ['user', 'admin'])) {
-                $users = $this->userModel->getAll();
+                $users = $this->userModel->getUsersPaginated($limit, $offset);
+                $totalUsers = $this->userModel->getTotalUsers();
+                $totalPages = ceil($totalUsers / $limit);
             }
         }
 

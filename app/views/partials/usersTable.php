@@ -75,6 +75,17 @@ $isLoggedIn = $isLoggedIn ?? false;
         <?php endif; ?>
       </tbody>
     </table>
+    
+    <?php if (!empty($filteredUsers)): ?>
+      <div class="pagination">
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+          <a href="?page=<?= $i ?><?= !empty($search) ? '&search=' . urlencode($search) : '' ?>"
+            class="<?= ($i == $page) ? 'active' : '' ?>">
+            <?= $i ?>
+          </a>
+        <?php endfor; ?>
+      </div>
+    <?php endif; ?>
                
   </section>
 <?php endif; ?>
