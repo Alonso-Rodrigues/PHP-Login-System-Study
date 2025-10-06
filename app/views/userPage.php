@@ -18,7 +18,7 @@
         </div>
 
         <form method="POST" enctype="multipart/form-data" class="form-photo-upload">
-            <label for="photo">Upload new photo:</label>
+            <label for="photo" class="custom-file-upload">New Photo</label>
             <input type="file" name="photo" id="photo" required>
             <button type="submit" id="btn-photo-upload">Upload</button>
         </form>
