@@ -11,15 +11,15 @@
 
         <div class="user-photo">
             <?php if (!empty($user['photo'])): ?>
-                <img src="<?= htmlspecialchars($user['photo']); ?>" alt="User Photo" width="150">
+                <img src="<?= htmlspecialchars($user['photo']); ?>" alt="User Photo" title="User Photo">
             <?php else: ?>
                 <p>No photo uploaded</p>
             <?php endif; ?>
         </div>
 
         <form method="POST" enctype="multipart/form-data" class="form-photo-upload">
-            <label for="photo" class="custom-file-upload">New Photo</label>
-            <input type="file" name="photo" id="photo" required>
+            <label for="input-photo" class="custom-file-upload">New Photo</label>
+            <input type="file" name="photo" id="input-photo" required>
             <button type="submit" id="btn-photo-upload">Upload</button>
         </form>
     </section>

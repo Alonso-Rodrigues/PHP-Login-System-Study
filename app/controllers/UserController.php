@@ -184,8 +184,16 @@ class UserController {
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0777, true);
             }
+            
+            if (!empty($user['photo'])) {
+                $oldFile = __DIR__ . '/../../public' . $user['photo'];
+                if (file_exists($oldFile)) {
+                    unlink($oldFile);
+                }
+            }
 
-            $fileName = $id . "_" . basename($_FILES['photo']['name']);
+            $ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
+            $fileName = $id . "." . $ext;
             $targetFile = $uploadDir . $fileName;
 
             if (move_uploaded_file($_FILES['photo']['tmp_name'], $targetFile)) {
