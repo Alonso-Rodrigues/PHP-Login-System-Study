@@ -1,8 +1,8 @@
 <?php
 $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 ?>
-<script src="/assets/js/main.js" defer></script>
 
+<script src="/assets/js/main.js" defer></script>
 <header class="menu-container">
   <nav id="nav-container" class="menu-items">
 
