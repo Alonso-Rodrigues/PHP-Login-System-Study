@@ -1,6 +1,7 @@
 <?php include __DIR__ . '/../views/partials/header.php'; ?>
 <?php include __DIR__ . '/../views/partials/menu.php'; ?>
 
+<script src="/assets/js/userPage.js" defer></script>
 <section class="container-user-profile">
     <section class="user-profile">
         <h1>User Profile</h1>
@@ -23,6 +24,9 @@
             <button type="submit" id="btn-photo-upload">Upload</button>
         </form>
     </section>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
 </section>
 
 <?php include __DIR__ . '/../views/partials/footer.php'; ?>
