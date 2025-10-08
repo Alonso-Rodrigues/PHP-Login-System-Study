@@ -27,13 +27,12 @@ MySQL 5.7+ or MariaDB 10.2+ <br>
 Apache with mod_rewrite enabled <br>
 
 ## 👣 Step by Step
-1. Clone the repository <br>
+1 - Clone the repository <br>
 git clone https://github.com/Alonso-Rodrigues/LoginPHP.git <br>
 
-2. Configure the database <br> <br>
-Import the SQL file included in the project: <br>
+2 - Configure the database <br>
+Import the SQL file included in the project <br><br>
 Using phpMyAdmin: <br>
-
 Access phpMyAdmin <br>
 Create a database called login_system <br>
 Select the database <br>
@@ -41,14 +40,14 @@ Go to "Import" tab <br>
 Choose the database/database.sql file <br>
 Click "Execute" <br>
 
-3. Configure database connection <br>
+3 - Configure database connection <br>
 Edit app/connect/config.php with your credentials: <br>
 php$host = 'localhost'; <br>
 $dbname = 'login_system'; <br>
 $username = 'root';      // your username <br>
 $password = '';          // your password <br>
 
-4. Access the application <br> <br>
+4 - Access the application <br> <br>
 http://localhost/LoginPHP/public <br> <br>
 
 ## 🔐 Security Features <br>
