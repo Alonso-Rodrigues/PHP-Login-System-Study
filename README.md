@@ -1,7 +1,7 @@
-📱 LoginPHP - User Management System
+# 📱 LoginPHP - User Management System
 Complete authentication and user management system developed in pure PHP with MVC architecture.
 
-🚀 Features
+## 🚀 Features
 ✅ Full authentication (Login/Logout/Register)
 ✅ Role system (Admin/User)
 ✅ User CRUD with pagination
@@ -12,21 +12,21 @@ Complete authentication and user management system developed in pure PHP with MV
 ✅ Route protection with middleware
 ✅ Loading spinner for uploads
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 Backend: PHP 7.4+
 Database: MySQL/MariaDB
 Frontend: HTML5, CSS3, JavaScript (Vanilla)
 Architecture: MVC (Model-View-Controller)
 Security: PDO Prepared Statements, Sessions, Password Hashing
 
-⚙️ Installation
+## ⚙️ Installation
 Prerequisites
 
 PHP 7.4 or higher
 MySQL 5.7+ or MariaDB 10.2+
 Apache with mod_rewrite enabled
 
-👣 Step by Step
+## 👣 Step by Step
 1. Clone the repository
 git clone https://github.com/Alonso-Rodrigues/LoginPHP.git
 
@@ -51,7 +51,7 @@ $password = '';          // your password
 4. Access the application
 http://localhost/LoginPHP/public
 
-🔐 Security Features
+## 🔐 Security Features
 ✅ Encrypted passwords with password_hash()
 ✅ SQL Injection protection (PDO Prepared Statements)
 ✅ Session validation
@@ -59,7 +59,7 @@ http://localhost/LoginPHP/public
 ✅ Route protection by role
 ✅ Input sanitization with htmlspecialchars()
 
-🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome! Follow these steps:
 
 Fork the project
@@ -79,11 +79,11 @@ refactor: Code refactoring
 test: Tests
 chore: Maintenance
 
-👨‍💻 Author
+## 👨‍💻 Author
 Alonso Rodrigues
 GitHub: @Alonso-Rodrigues
 
-🐛 Report Bugs
+## 🐛 Report Bugs
 Found a bug? Open an issue detailing:
 
 Problem description
