@@ -199,7 +199,8 @@ class UserController {
             if (move_uploaded_file($_FILES['photo']['tmp_name'], $targetFile)) {
                 $photoPath = "/uploads/users/" . $fileName;
                 $this->userModel->updateUserPhoto($id, $photoPath);
-                $user['photo'] = $photoPath;
+
+                $user = $this->userModel->getById($id);
             }
         }
 
