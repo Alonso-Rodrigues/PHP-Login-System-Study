@@ -47,8 +47,8 @@ $dbname = 'login_system'; <br>
 $username = 'root';      // your username <br>
 $password = '';          // your password <br>
 
-4 - Access the application <br> <br>
-http://localhost/LoginPHP/public <br> <br>
+4 - Access the application <br>
+http://loginstudy/ <br>
 
 ## 🔐 Security Features <br>
 ✅ Encrypted passwords with password_hash() <br>
