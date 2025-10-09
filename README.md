@@ -28,7 +28,7 @@ Apache with mod_rewrite enabled <br>
 
 ## 👣 Step by Step
 1 - Clone the repository <br>
-git clone https://github.com/Alonso-Rodrigues/LoginPHP.git <br>
+git clone https://github.com/Alonso-Rodrigues/PHP-Login-System-Study.git <br>
 
 2 - Configure the database <br>
 Import the SQL file included in the project <br><br>
